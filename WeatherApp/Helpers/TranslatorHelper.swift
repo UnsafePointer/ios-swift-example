@@ -16,15 +16,13 @@ class TranslatorHelper {
             if let jsonCities = json["list"].array {
                 var cities = [City]()
                 for jsonCity in jsonCities {
-                    if let name = jsonCity["name"].string {
-                        let city = City(name: name)
-                        cities.append(city)
-                    }
+                    let city = City(name: jsonCity["name"].string!, temperature: jsonCity["main"]["temp"].double!, pressure: jsonCity["main"]["pressure"].double!, humidity: jsonCity["main"]["humidity"].double!)
+                    cities.append(city)
                 }
                 return cities
             }
         }
-        return nil;
+        return nil
     }
     
 }

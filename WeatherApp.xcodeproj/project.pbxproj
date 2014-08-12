@@ -17,6 +17,7 @@
 		A0F5EACE199A2EEE0079BD9E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5EACD199A2EEE0079BD9E /* SwiftyJSON.swift */; };
 		A0F5EAD1199A2F740079BD9E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5EAD0199A2F740079BD9E /* City.swift */; };
 		A0F5EAD3199A2FC40079BD9E /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5EAD2199A2FC40079BD9E /* CitiesViewController.swift */; };
+		A0F5EAD5199A3CB20079BD9E /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5EAD4199A3CB20079BD9E /* CityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A0F5EACD199A2EEE0079BD9E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = External/SwiftyJSON/SwiftyJSON/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
 		A0F5EAD0199A2F740079BD9E /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = Models/City.swift; sourceTree = "<group>"; };
 		A0F5EAD2199A2FC40079BD9E /* CitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CitiesViewController.swift; path = Controllers/CitiesViewController.swift; sourceTree = "<group>"; };
+		A0F5EAD4199A3CB20079BD9E /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityViewController.swift; path = Controllers/CityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				A0F5EAD2199A2FC40079BD9E /* CitiesViewController.swift */,
+				A0F5EAD4199A3CB20079BD9E /* CityViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				A0F5EAC4199A1F770079BD9E /* NetworkingHelper.swift in Sources */,
 				A0F5EACC199A2EC90079BD9E /* Alamofire.swift in Sources */,
 				A0F5EACA199A2CAA0079BD9E /* TranslatorHelper.swift in Sources */,
+				A0F5EAD5199A3CB20079BD9E /* CityViewController.swift in Sources */,
 				A0F5EACE199A2EEE0079BD9E /* SwiftyJSON.swift in Sources */,
 				A0391BA7199A14CE003E93EB /* AppDelegate.swift in Sources */,
 				A0F5EAD3199A2FC40079BD9E /* CitiesViewController.swift in Sources */,

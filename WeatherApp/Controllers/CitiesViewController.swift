@@ -9,19 +9,30 @@
 import UIKit
 import CoreLocation
 
-class CitiesViewController: UITableViewController, CLLocationManagerDelegate {
+class CitiesViewController: UITableViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate {
     
+    let tableViewCellIdentifier = "CityCell"
+    let showCitySegueIdentifier = "ShowCity"
     let networkingHelper = NetworkingHelper()
     let locationManager = CLLocationManager()
+    var cities = [City]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLocationManager()
         setupRefreshControl()
+        setupLocationManager()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if (segue.identifier == showCitySegueIdentifier) {
+            let destination = segue.destinationViewController as CityViewController
+            let city = cities[self.tableView.indexPathForSelectedRow().row]
+            destination.city = city
+        }
     }
     
     func setupLocationManager() {
@@ -31,7 +42,7 @@ class CitiesViewController: UITableViewController, CLLocationManagerDelegate {
     
     func setupRefreshControl() {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: Selector("onRefresh:"), forControlEvents: UIControlEvents.ValueChanged);
+        refreshControl.addTarget(self, action: Selector("onRefresh:"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
     }
     
@@ -51,7 +62,9 @@ class CitiesViewController: UITableViewController, CLLocationManagerDelegate {
             if let unwrappedError = error? {
                 println(unwrappedError.localizedDescription)
             } else {
-                println("Success")
+                self.cities.removeAll(keepCapacity: false)
+                self.cities += cities!
+                self.tableView.reloadData()
             }
         }
     }
@@ -64,6 +77,31 @@ class CitiesViewController: UITableViewController, CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             loadCitiesWithUserLatitude(location.coordinate.latitude, userLongitude: location.coordinate.longitude)
         }
+    }
+    
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.AuthorizedWhenInUse {
+            onRefresh(self.refreshControl)
+        }
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+        return cities.count
+    }
+    
+    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+        let tableViewCell = tableView.dequeueReusableCellWithIdentifier(tableViewCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+        let city = cities[indexPath.row]
+        tableViewCell.textLabel.text = city.name
+        return tableViewCell
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        performSegueWithIdentifier(showCitySegueIdentifier, sender: self)
     }
 
 }

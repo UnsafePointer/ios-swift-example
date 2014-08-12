@@ -11,5 +11,8 @@ import Foundation
 struct City {
     
     let name: String
+    let temperature: Double
+    let pressure: Double
+    let humidity: Double
     
 }
