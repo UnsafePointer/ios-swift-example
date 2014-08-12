@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CitiesViewController.swift
 //  WeatherApp
 //
 //  Created by Renzo Crisostomo on 12/08/14.
