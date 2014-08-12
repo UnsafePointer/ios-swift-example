@@ -1,0 +1,6 @@
+[submodule "External/Alamofire"]
+	path = External/Alamofire
+	url = git@github.com:Alamofire/Alamofire.git
+[submodule "External/SwiftyJSON"]
+	path = External/SwiftyJSON
+	url = git@github.com:lingoer/SwiftyJSON.git
