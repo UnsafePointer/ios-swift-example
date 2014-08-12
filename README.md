@@ -3,7 +3,10 @@ ios-swift-example
 
 __Description:__  
 
-This is an iOS application example written in Swift using Alamofire networking library and SwiftyJSON JSON parsing library.
+This is an iOS application example written in Swift using Alamofire networking library and SwiftyJSON JSON parsing library.  
+
+![ios-swift-screenshot-1.png](https://dl.dropboxusercontent.com/u/12352209/GitHub/ios-swift-screenshot-1.png)&nbsp;
+![ios-swift-screenshot-2.png](https://dl.dropboxusercontent.com/u/12352209/GitHub/ios-swift-screenshot-2.png)
 
 __Building:__  
 
