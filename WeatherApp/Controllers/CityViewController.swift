@@ -28,7 +28,7 @@ class CityViewController: UITableViewController {
         navigationItem.title = city.name
         temperatureLabel.text = String(format: "%.2f °K", city.temperature)
         pressureLabel.text = String(format: "%.2f hpa", city.pressure)
-        humidityLabel.text = String(format: "%.2f %", city.humidity)
+        humidityLabel.text = String(format: "%.2f %%", city.humidity)
     }
     
 }
