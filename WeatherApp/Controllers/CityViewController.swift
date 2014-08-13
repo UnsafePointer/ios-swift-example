@@ -26,9 +26,9 @@ class CityViewController: UITableViewController {
     
     func setupLabels() {
         navigationItem.title = city.name
-        temperatureLabel.text = String(format: "%.2f", city.temperature)
-        pressureLabel.text = String(format: "%.2f", city.pressure)
-        humidityLabel.text = String(format: "%.2f", city.humidity)
+        temperatureLabel.text = String(format: "%.2f °K", city.temperature)
+        pressureLabel.text = String(format: "%.2f hpa", city.pressure)
+        humidityLabel.text = String(format: "%.2f %", city.humidity)
     }
     
 }
