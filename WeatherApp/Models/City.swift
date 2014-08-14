@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import Realm
 
-struct City {
+class City: RLMObject {
     
-    let name: String
-    let temperature: Double
-    let pressure: Double
-    let humidity: Double
+    dynamic var name = ""
+    dynamic var temperature = 0.0
+    dynamic var pressure = 0.0
+    dynamic var humidity = 0.0
     
 }

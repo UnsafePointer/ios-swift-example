@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0231905199C8EA20014A59F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02318F4199C8E710014A59F /* Realm.framework */; };
+		A0231908199C8ED20014A59F /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A02318F8199C8E710014A59F /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0391B8C199A134F003E93EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0391B8B199A134F003E93EB /* Images.xcassets */; };
 		A0391BA7199A14CE003E93EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0391BA6199A14CE003E93EB /* AppDelegate.swift */; };
 		A0391BAB199A14E8003E93EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0391BAA199A14E8003E93EB /* Main.storyboard */; };
@@ -20,7 +22,87 @@
 		A0F5EAD5199A3CB20079BD9E /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5EAD4199A3CB20079BD9E /* CityViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A02318F3199C8E710014A59F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A02318E8199C8E710014A59F /* Realm-Xcode6.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8D89B981955FC6D00CF2B9A;
+			remoteInfo = OSX;
+		};
+		A02318F5199C8E710014A59F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A02318E8199C8E710014A59F /* Realm-Xcode6.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8D89BA31955FC6D00CF2B9A;
+			remoteInfo = "OSX Tests";
+		};
+		A02318F7199C8E710014A59F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A02318E8199C8E710014A59F /* Realm-Xcode6.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E856D1D5195614A300FB2FCF;
+			remoteInfo = iOS;
+		};
+		A02318F9199C8E710014A59F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A02318E8199C8E710014A59F /* Realm-Xcode6.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E856D1DF195614A400FB2FCF;
+			remoteInfo = "iOS Tests";
+		};
+		A02318FB199C8E710014A59F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A02318E8199C8E710014A59F /* Realm-Xcode6.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3F8DCA5719930F550008BD7F;
+			remoteInfo = "iOS Device Tests";
+		};
+		A02318FD199C8E710014A59F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A02318E8199C8E710014A59F /* Realm-Xcode6.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8FE4140196DBA6700073FBB;
+			remoteInfo = OSXTestFramework;
+		};
+		A02318FF199C8E710014A59F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A02318E8199C8E710014A59F /* Realm-Xcode6.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8CA10F9196DC18A0044F8AA;
+			remoteInfo = iOSTestFramework;
+		};
+		A0231901199C8E710014A59F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A02318E8199C8E710014A59F /* Realm-Xcode6.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3F1A5E721992EB7400F45F4C;
+			remoteInfo = TestHost;
+		};
+		A0231903199C8E930014A59F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A02318E8199C8E710014A59F /* Realm-Xcode6.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E856D1D4195614A300FB2FCF;
+			remoteInfo = iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A0231906199C8EAB0014A59F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A0231908199C8ED20014A59F /* Realm.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A02318E8199C8E710014A59F /* Realm-Xcode6.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Realm-Xcode6.xcodeproj"; path = "External/realm-cocoa/Realm-Xcode6.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		A0391B7F199A134F003E93EB /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0391B8B199A134F003E93EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0391BA1199A1498003E93EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Supporting/Info.plist; sourceTree = "<group>"; };
@@ -41,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0231905199C8EA20014A59F /* Realm.framework in Frameworks */,
 				A0F5EAC6199A23610079BD9E /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,6 +131,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A02318E9199C8E710014A59F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A02318F4199C8E710014A59F /* Realm.framework */,
+				A02318F6199C8E710014A59F /* OSX Tests.xctest */,
+				A02318F8199C8E710014A59F /* Realm.framework */,
+				A02318FA199C8E710014A59F /* iOS Tests.xctest */,
+				A02318FC199C8E710014A59F /* iOS Device Tests.xctest */,
+				A02318FE199C8E710014A59F /* TestFramework.framework */,
+				A0231900199C8E710014A59F /* TestFramework.framework */,
+				A0231902199C8E710014A59F /* TestHost.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A0391B76199A134F003E93EB = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +216,7 @@
 			children = (
 				A0F5EACD199A2EEE0079BD9E /* SwiftyJSON.swift */,
 				A0F5EACB199A2EC90079BD9E /* Alamofire.swift */,
+				A02318E8199C8E710014A59F /* Realm-Xcode6.xcodeproj */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -157,10 +256,12 @@
 				A0391B7B199A134F003E93EB /* Sources */,
 				A0391B7C199A134F003E93EB /* Frameworks */,
 				A0391B7D199A134F003E93EB /* Resources */,
+				A0231906199C8EAB0014A59F /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A0231904199C8E930014A59F /* PBXTargetDependency */,
 			);
 			name = WeatherApp;
 			productName = WeatherApp;
@@ -192,12 +293,77 @@
 			mainGroup = A0391B76199A134F003E93EB;
 			productRefGroup = A0391B80199A134F003E93EB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A02318E9199C8E710014A59F /* Products */;
+					ProjectRef = A02318E8199C8E710014A59F /* Realm-Xcode6.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A0391B7E199A134F003E93EB /* WeatherApp */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A02318F4199C8E710014A59F /* Realm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Realm.framework;
+			remoteRef = A02318F3199C8E710014A59F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A02318F6199C8E710014A59F /* OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "OSX Tests.xctest";
+			remoteRef = A02318F5199C8E710014A59F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A02318F8199C8E710014A59F /* Realm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Realm.framework;
+			remoteRef = A02318F7199C8E710014A59F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A02318FA199C8E710014A59F /* iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "iOS Tests.xctest";
+			remoteRef = A02318F9199C8E710014A59F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A02318FC199C8E710014A59F /* iOS Device Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "iOS Device Tests.xctest";
+			remoteRef = A02318FB199C8E710014A59F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A02318FE199C8E710014A59F /* TestFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TestFramework.framework;
+			remoteRef = A02318FD199C8E710014A59F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A0231900199C8E710014A59F /* TestFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TestFramework.framework;
+			remoteRef = A02318FF199C8E710014A59F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A0231902199C8E710014A59F /* TestHost.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TestHost.app;
+			remoteRef = A0231901199C8E710014A59F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A0391B7D199A134F003E93EB /* Resources */ = {
@@ -228,6 +394,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0231904199C8E930014A59F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iOS;
+			targetProxy = A0231903199C8E930014A59F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A0391B99199A134F003E93EB /* Debug */ = {
@@ -312,6 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherApp/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -323,6 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/WeatherApp/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

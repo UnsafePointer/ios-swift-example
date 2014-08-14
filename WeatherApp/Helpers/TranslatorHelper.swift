@@ -16,7 +16,11 @@ class TranslatorHelper {
             if let jsonCities = json["list"].array {
                 var cities = [City]()
                 for jsonCity in jsonCities {
-                    let city = City(name: jsonCity["name"].string!, temperature: jsonCity["main"]["temp"].double!, pressure: jsonCity["main"]["pressure"].double!, humidity: jsonCity["main"]["humidity"].double!)
+                    let city = City()
+                    city.name = jsonCity["name"].string!
+                    city.temperature = jsonCity["main"]["temp"].double!
+                    city.pressure = jsonCity["main"]["pressure"].double!
+                    city.humidity = jsonCity["main"]["humidity"].double!
                     cities.append(city)
                 }
                 return cities
