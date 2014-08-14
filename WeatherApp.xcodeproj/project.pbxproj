@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A0231905199C8EA20014A59F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02318F4199C8E710014A59F /* Realm.framework */; };
 		A0231908199C8ED20014A59F /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A02318F8199C8E710014A59F /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A023190A199C94230014A59F /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0231909199C94230014A59F /* DatabaseHelper.swift */; };
 		A0391B8C199A134F003E93EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0391B8B199A134F003E93EB /* Images.xcassets */; };
 		A0391BA7199A14CE003E93EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0391BA6199A14CE003E93EB /* AppDelegate.swift */; };
 		A0391BAB199A14E8003E93EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0391BAA199A14E8003E93EB /* Main.storyboard */; };
@@ -103,6 +104,7 @@
 
 /* Begin PBXFileReference section */
 		A02318E8199C8E710014A59F /* Realm-Xcode6.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Realm-Xcode6.xcodeproj"; path = "External/realm-cocoa/Realm-Xcode6.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		A0231909199C94230014A59F /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseHelper.swift; path = Helpers/DatabaseHelper.swift; sourceTree = "<group>"; };
 		A0391B7F199A134F003E93EB /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0391B8B199A134F003E93EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0391BA1199A1498003E93EB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Supporting/Info.plist; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				A0F5EAC3199A1F770079BD9E /* NetworkingHelper.swift */,
 				A0F5EAC9199A2CAA0079BD9E /* TranslatorHelper.swift */,
+				A0231909199C94230014A59F /* DatabaseHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0F5EAC4199A1F770079BD9E /* NetworkingHelper.swift in Sources */,
+				A023190A199C94230014A59F /* DatabaseHelper.swift in Sources */,
 				A0F5EACC199A2EC90079BD9E /* Alamofire.swift in Sources */,
 				A0F5EACA199A2CAA0079BD9E /* TranslatorHelper.swift in Sources */,
 				A0F5EAD5199A3CB20079BD9E /* CityViewController.swift in Sources */,

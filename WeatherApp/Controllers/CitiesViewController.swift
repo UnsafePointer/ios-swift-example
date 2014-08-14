@@ -9,12 +9,13 @@
 import UIKit
 import CoreLocation
 
-class CitiesViewController: UITableViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate {
+class CitiesViewController: UITableViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate {
     
     let tableViewCellIdentifier = "CityCell"
     let showCitySegueIdentifier = "ShowCity"
     let networkingHelper = NetworkingHelper()
     let locationManager = CLLocationManager()
+    let databaseHelper = DatabaseHelper()
     var cities = [City]()
     
     override func viewDidLoad() {
@@ -60,12 +61,27 @@ class CitiesViewController: UITableViewController, CLLocationManagerDelegate, UI
         networkingHelper.citiesWithUserLatitude(userLatitude, userLongitude: userLongitude) { (cities, error) -> () in
             self.refreshControl.endRefreshing()
             if let unwrappedError = error? {
-                println(unwrappedError.localizedDescription)
+                if unwrappedError.domain == NSURLErrorDomain && unwrappedError.code == NSURLErrorNotConnectedToInternet {
+                    let alertView = UIAlertView(title: "Error", message: "Internet connection appears to be offline. Would you like to retrieve the last stored values?", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "Yes")
+                    alertView.show()
+                }
             } else {
                 self.cities.removeAll(keepCapacity: false)
+                self.databaseHelper.storeCities(cities!)
                 self.cities += cities!
                 self.tableView.reloadData()
             }
+        }
+    }
+    
+    func loadCitiesFromDatabase() {
+        databaseHelper.getStoredCities { (storedCities) -> () in
+            self.cities.removeAll(keepCapacity: false)
+            for city in storedCities {
+                let typedCity = city as City
+                self.cities.append(typedCity)
+            }
+            self.tableView.reloadData()
         }
     }
     
@@ -103,6 +119,14 @@ class CitiesViewController: UITableViewController, CLLocationManagerDelegate, UI
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         performSegueWithIdentifier(showCitySegueIdentifier, sender: self)
     }
+    
+    // MARK: - UIAlertViewDelegate
+    
+    func alertView(alertView: UIAlertView!, clickedButtonAtIndex buttonIndex: Int) {
+        // alertView.firstOtherButtonIndex is not working as for Beta 5.
+        if (1 == buttonIndex) {
+            loadCitiesFromDatabase()
+        }
+    }
 
 }
-
