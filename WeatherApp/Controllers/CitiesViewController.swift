@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Realm
 
 class CitiesViewController: UITableViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate {
     
@@ -16,7 +17,7 @@ class CitiesViewController: UITableViewController, CLLocationManagerDelegate, UI
     let networkingHelper = NetworkingHelper()
     let locationManager = CLLocationManager()
     let databaseHelper = DatabaseHelper()
-    var cities = [City]()
+    var cities = RLMArray(objectClassName: "City")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class CitiesViewController: UITableViewController, CLLocationManagerDelegate, UI
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if (segue.identifier == showCitySegueIdentifier) {
             let destination = segue.destinationViewController as CityViewController
-            let city = cities[self.tableView.indexPathForSelectedRow().row]
+            let city = cities[UInt(self.tableView.indexPathForSelectedRow().row)] as City
             destination.city = city
         }
     }
@@ -66,23 +67,15 @@ class CitiesViewController: UITableViewController, CLLocationManagerDelegate, UI
                     alertView.show()
                 }
             } else {
-                self.cities.removeAll(keepCapacity: false)
                 self.databaseHelper.storeCities(cities!)
-                self.cities += cities!
-                self.tableView.reloadData()
+                self.loadCitiesFromDatabase()
             }
         }
     }
     
     func loadCitiesFromDatabase() {
-        databaseHelper.getStoredCities { (storedCities) -> () in
-            self.cities.removeAll(keepCapacity: false)
-            for city in storedCities {
-                let typedCity = city as City
-                self.cities.append(typedCity)
-            }
-            self.tableView.reloadData()
-        }
+        cities = City.allObjects()
+        self.tableView.reloadData()
     }
     
     // MARK: - CLLocationManagerDelegate
@@ -104,12 +97,12 @@ class CitiesViewController: UITableViewController, CLLocationManagerDelegate, UI
     // MARK: - UITableViewDataSource
     
     override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        return cities.count
+        return Int(cities.count)
     }
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         let tableViewCell = tableView.dequeueReusableCellWithIdentifier(tableViewCellIdentifier, forIndexPath: indexPath) as UITableViewCell
-        let city = cities[indexPath.row]
+        let city = cities[UInt(indexPath.row)] as City
         tableViewCell.textLabel.text = city.name
         return tableViewCell
     }
